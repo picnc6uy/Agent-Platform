@@ -1,0 +1,76 @@
+# Sample configuration for record catalog pipeline
+
+# Folder containing source photos to catalog and process
+SOURCE_PHOTO_FOLDER: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/inbox_photos"
+
+# Output CSV file path for photo catalog metadata (will be generated early in pipeline)
+PHOTO_CATALOG_OUTPUT_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/photo_catalog.csv"
+
+# Folder containing preprocessed images for circular label detection and straightening
+CIRCULAR_LABEL_IMAGE_FOLDER: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/inbox_photos_straightened"
+
+# Folder for resized description images removed per updated pipeline
+# DESC_IMAGE_FOLDER: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/inbox_photos_desc"
+
+# Folder containing resized images for OCR processing
+OCR_IMAGE_FOLDER: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/inbox_photos_ocr"
+
+# OCR Azure results CSV output path
+OCR_AZURE_RESULTS_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/ocr_azure_results.csv"
+
+# Parsed OCR CSV file path used in the parsing test
+OCR_PARSED_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/ocr_texts.csv"
+
+# Parsed metadata CSV output
+PARSED_METADATA_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/parsed_metadata.csv"
+
+# Review and enrichment outputs
+REVIEW_SUGGESTIONS_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/catalog_review_suggestions.csv"
+ENRICHMENT_CANDIDATES_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/enrichment_candidates.csv"
+ENRICHED_RESOLVED_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/enriched_resolved.csv"
+FINAL_ARCHIVAL_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/final_archival_catalog.csv"
+FINAL_ARCHIVAL_CONSOLIDATED_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/final_archival_catalog_consolidated.csv"
+FINAL_TOTAL_CATALOG_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/final_total_catalog.csv"
+CATALOG_VALIDATION_REPORT_CSV: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/catalog_validation_report.csv"
+
+# Final catalog CSV output path (enriched metadata)
+CATALOG_OUTPUT_PATH: "C:/Users/ghendrick/PhotoProject/dev_data/record_catalog/data/outputs/record_catalog.csv"
+
+# Azure Computer Vision API Credentials
+AZURE_COMPUTER_VISION_KEY: ""
+AZURE_COMPUTER_VISION_ENDPOINT: "https://photocatalog.cognitiveservices.azure.com/"
+
+# OpenAI API Key
+OPENAI_API_KEY: ""
+
+# Metadata enrichment API configs
+DISCOGS_TOKEN: "nPJEBKAkvOZeDaeBzPAssvACzHClBLvcxHWPWJxC"
+MUSICBRAINZ_USER_AGENT: "RecordCatalogApp/1.0 (contact@example.com)"
+USE_MUSICBRAINZ: "false"
+
+# OCR retry
+MAX_OCR_RETRIES: 10
+OCR_RETRY_DELAY: 1
+OCR_INTER_IMAGE_DELAY: 7
+
+# Image processing
+MAX_DESCRIPTION_DIMENSION: 1024
+MAX_OCR_DIMENSION: 4200
+JPEG_QUALITY: 85
+# Preprocessing tuning
+PREPROCESS_MODE: "ocr_smooth"
+CLAHE_CLIP_LIMIT: 3.0
+CLAHE_TILE_GRID_SIZE: [8, 8]
+BILATERAL_D: 7
+BILATERAL_SIGMA_COLOR: 90
+BILATERAL_SIGMA_SPACE: 90
+ADAPTIVE_THRESH_BLOCK_SIZE: 21
+ADAPTIVE_THRESH_C: 5
+MORPH_KERNEL_SIZE: 3
+SHARPEN_RADIUS: 1.2
+SHARPEN_PERCENT: 130
+SHARPEN_THRESHOLD: 3
+BACKGROUND_KERNEL_SIZE: 31
+GAMMA_CORRECTION: 1.1
+AUTO_ROTATE: false
+AUTO_ROTATE_MAX_DEG: 45
